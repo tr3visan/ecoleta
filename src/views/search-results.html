@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-search-results" %}
+
+{% block title %}
+  <title>Ecoleta - Resultados</title>
+{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/assets/css/search-results.css">
+{% endblock styles %}
+
+{% block content %}
+
+  {% include 'includes/page-header.html' %}
+
+    <main>
+      {% if total > 0 %}
+        <h4><strong>{{ total }} pontos</strong> encoontrados</h4>
+
+        <div class="cards">
+          {% for place in places %}
+            <div class="card">
+              <div class="box-img">
+                <img src="{{ place.image }}" alt="{{ place.name }}">
+              </div>
+              <h2>{{ place.name }}</h2>
+              <h3>{{ place.items }}</h3>
+              <p>
+                {{ place.city }}, {{ place.state }}<br>
+                {{ place.address }}, {{ place.address2 }} <br>
+                {{ place.number }}
+              </p>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% else %}
+          <h4><strong>Nenhum </strong> local cadastrado.</h4>
+          
+      {% endif %}
+
+    </main>
+{% endblock content %}
+
+
+
