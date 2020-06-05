@@ -2,7 +2,7 @@
 
 > Projeto Fullstack by Next Level Week
 
-![](header.png)
+![preview](https://github.com/tr3visan/ecoleta/blob/master/public/assets/img/preview.gif)
 
 ## Instalando as dependências
 
